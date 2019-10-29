@@ -22,5 +22,8 @@ public class MainActivity extends AppCompatActivity {
         TabItem tabStatus = findViewById(R.id.tab_Status);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 }
